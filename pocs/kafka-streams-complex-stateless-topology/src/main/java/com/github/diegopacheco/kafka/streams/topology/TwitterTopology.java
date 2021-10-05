@@ -1,15 +1,17 @@
 package com.github.diegopacheco.kafka.streams.topology;
 
-
 import com.github.diegopacheco.kafka.streams.model.Tweet;
+import com.github.diegopacheco.kafka.streams.processors.LogProcessor;
 import com.github.diegopacheco.kafka.streams.serde.SerdeService;
 import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.kstream.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class TwitterTopology {
 
@@ -60,10 +62,29 @@ public class TwitterTopology {
         // merge the two streams
         KStream<byte[], Tweet> merged = englishStream.merge(translatedStream);
 
-        merged.to(
+        // enrich with props
+        KStream<byte[], Tweet> enriched =
+                merged.flatMapValues(
+                        (tweet) -> {
+                            List<Tweet> result = new ArrayList<>();
+                            Map<String,String> props = tweet.getAdditionalProps();
+                            props.put("by","DiegoPacheco");
+                            props.put("year","2021");
+                            tweet.setAdditionalProps(props);
+
+                            result.add(tweet);
+                            return result;
+                        });
+        enriched.print(Printed.<byte[], Tweet>toSysOut().withLabel("tweets-after-enrich"));
+
+        // store to a end sink == another kafka topic
+        enriched.to(
                 "end-sink-topic",
                 Produced.with(Serdes.ByteArray(), new SerdeService()));
 
-        return builder.build();
+        Topology topology = builder.build();
+        topology.addSource("EndTopicSource", "end-sink-topic");
+        topology.addProcessor("EndOfProcessingLogger", LogProcessor::new, "EndTopicSource");
+        return topology;
     }
 }
