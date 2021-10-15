@@ -1,4 +1,3 @@
-import com.github.diegopacheco.kafka.streams.topology.TwitterTopology;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.Topology;
@@ -7,7 +6,7 @@ import java.util.Properties;
 
 public class Main{
   public static void main(String args[]){
-    Topology topology = TwitterTopology.build();
+    Topology topology = null;
 
     // set the required properties for running Kafka Streams
     Properties config = new Properties();
@@ -18,7 +17,7 @@ public class Main{
     KafkaStreams streams = new KafkaStreams(topology, config);
 
     Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
-    System.out.println("Starting Twitter streams");
+    System.out.println("Starting Stateful streams");
     streams.start();
   }
 }
