@@ -27,7 +27,7 @@ public class LeaderboardService {
 
     private static final Logger log = LoggerFactory.getLogger(LeaderboardService.class);
 
-    LeaderboardService(HostInfo hostInfo, KafkaStreams streams) {
+    public  LeaderboardService(HostInfo hostInfo, KafkaStreams streams) {
         this.hostInfo = hostInfo;
         this.streams = streams;
     }
@@ -41,7 +41,7 @@ public class LeaderboardService {
                         QueryableStoreTypes.keyValueStore()));
     }
 
-    void start() {
+    public void start() {
         Javalin app = Javalin.create().start(hostInfo.port());
 
         /** Local key-value store query: all entries */
