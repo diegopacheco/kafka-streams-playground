@@ -1,3 +1,4 @@
+import com.github.diegopacheco.kafka.streams.topology.LeaderboardTopology;
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.Topology;
@@ -6,7 +7,7 @@ import java.util.Properties;
 
 public class Main{
   public static void main(String args[]){
-    Topology topology = null;
+    Topology topology = LeaderboardTopology.build();
 
     // set the required properties for running Kafka Streams
     Properties config = new Properties();

@@ -1,0 +1,12 @@
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/model/ScoreWithPlayer.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/model/ScoreEvent.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/model/HighScores.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/serde/JsonSerializer.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/serde/JsonSerdes.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/Main.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/model/Enriched.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/model/Product.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/service/LeaderboardService.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/topology/LeaderboardTopology.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/serde/JsonDeserializer.java
+/mnt/e35d88d4-42b9-49ea-bf29-c4c3b018d429/diego/git/diegopacheco/kafka-streams-playground/pocs/kafka-streams-stateful-topology/src/main/java/com/github/diegopacheco/kafka/streams/model/Player.java
